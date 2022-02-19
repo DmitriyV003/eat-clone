@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: eat-clone-mysql
+    ports:
+      - "33061:3306"
+    volumes:
+      - mysql:/etc/mysql/conf.d
+    environment:
+      MYSQL_DATABASE: homestead
+      MYSQL_USER: homestead
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: supersecret
+
+volumes:
+  mysql:
